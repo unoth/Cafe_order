@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.dedok.cafe'
+    namespace 'com.test_projects.cafe'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.dedok.cafe"
+        applicationId "com.test_projects.cafe"
         minSdk 21
         targetSdk 32
         versionCode 1

@@ -1,4 +1,4 @@
-package com.dedok.cafe;
+package com.test_projects.cafe;
 
 import androidx.appcompat.app.AppCompatActivity;
 
