@@ -66,11 +66,27 @@ public class MakeOrderActivity extends AppCompatActivity {
         ArrayList<String> additives = new ArrayList<>();
         if (checkboxSugar.isChecked()) {
             additives.add(checkboxSugar.getText().toString());
-        } else if (checkboxMilk.isChecked()) {
+        }
+        if (checkboxMilk.isChecked()) {
             additives.add(checkboxMilk.getText().toString());
-        } else if (radioButtonTea.isChecked() && checkboxLemon.isChecked()) {
+        }
+        if (radioButtonTea.isChecked() && checkboxLemon.isChecked()) {
             additives.add(checkboxLemon.getText().toString());
         }
+        String drinkType = "";
+        if (radioButtonTea.isChecked()) {
+            drinkType = spinnerTea.getSelectedItem().toString();
+        } else if (radioButtonCoffee.isChecked()) {
+            drinkType = spinnerCoffee.getSelectedItem().toString();
+        }
+
+        Intent intent = OrderDetailActivity.newIntent(this,
+                userName,
+                drink,
+                drinkType,
+                additives.toString()
+        );
+        startActivity(intent);
     }
 
 
@@ -98,6 +114,7 @@ public class MakeOrderActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_USER_NAME, userName);
         return intent;
     }
+
 
     private void setupUserName() {
         userName = getIntent().getStringExtra(EXTRA_USER_NAME);
